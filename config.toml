@@ -1,4 +1,4 @@
-baseURL = 'https://ysultra.github.io/demoKracrWebsite/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'KRaCR Lab'
 [taxonomies]

@@ -6,10 +6,12 @@
                 <div class="col-md-6">
                     <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            {{ range $index, $image := site.Data.carousel.carouselImages }}
-                                <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
-                                    <img src="{{ $image }}" class="d-block w-100" alt="Slide {{ add $index 1 }}">
-                                </div>
+                            {{ with site.Data.carousel.images }}
+                                {{ range $index, $image := . }}
+                                    <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+                                        <img src="{{ $image.url | safeURL }}" class="d-block w-100" alt="Slide {{ add $index 1 }}">
+                                    </div>
+                                {{ end }}
                             {{ end }}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
@@ -21,6 +23,9 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
+
+
+
 
 
                 </div>

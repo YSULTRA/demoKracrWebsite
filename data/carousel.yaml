@@ -1,6 +1,4 @@
-carouselImages:
-  - "/images/homeCarousel/1.jpg"
-  - "/images/homeCarousel/2.jpg"
-  - "/images/homeCarousel/4.jpg"
-  - "/images/homeCarousel/5.jpg"
-
+images:
+  - url: "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/slideshow%2F1.jpg?alt=media&token=6a6dbf95-a448-49c6-b858-11c22eb8a46a"
+  - url: "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/slideshow%2F2.jpg?alt=media&token=775a7b67-e5da-4a09-adde-996ec08b2fb6"
+  - url: "https://firebasestorage.googleapis.com/v0/b/kracr-website.appspot.com/o/slideshow%2F3.jpg?alt=media&token=xyz123"
