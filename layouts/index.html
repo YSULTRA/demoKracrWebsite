@@ -6,13 +6,10 @@
                 <div class="col-md-6">
                     <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            {{ $images := readDir "/images/homeCarousel" }}
-                            {{ range $index, $image := $images }}
-                                {{ if or (strings.HasSuffix $image.Name ".jpg") (strings.HasSuffix $image.Name ".jpeg") (strings.HasSuffix $image.Name ".png") }}
-                                    <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
-                                        <img src="/images/{{ $image.Name }}" class="d-block w-100" alt="Slide {{ add $index 1 }}">
-                                    </div>
-                                {{ end }}
+                            {{ range $index, $image := site.Data.carousel.carouselImages }}
+                                <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+                                    <img src="{{ $image }}" class="d-block w-100" alt="Slide {{ add $index 1 }}">
+                                </div>
                             {{ end }}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
@@ -23,9 +20,9 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-
-
                     </div>
+
+
                 </div>
                 <div class="col-md-6">
                     <div class="about-content">
