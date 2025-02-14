@@ -6,7 +6,7 @@
                 <div class="col-md-6">
                     <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            {{ $images := readDir "static/images/homeCarousel" }}
+                            {{ $images := readDir "/images/homeCarousel" }}
                             {{ range $index, $image := $images }}
                                 {{ if or (strings.HasSuffix $image.Name ".jpg") (strings.HasSuffix $image.Name ".jpeg") (strings.HasSuffix $image.Name ".png") }}
                                     <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
