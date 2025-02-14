@@ -1,0 +1,89 @@
+{{ define "main" }}
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            {{ $images := readDir "static/images/homeCarousel" }}
+                            {{ range $index, $image := $images }}
+                                {{ if or (strings.HasSuffix $image.Name ".jpg") (strings.HasSuffix $image.Name ".jpeg") (strings.HasSuffix $image.Name ".png") }}
+                                    <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+                                        <img src="/images/{{ $image.Name }}" class="d-block w-100" alt="Slide {{ add $index 1 }}">
+                                    </div>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-content">
+                        <h2>About Us</h2>
+                        <p>Background knowledge and the ability to draw appropriate inferences when required plays a central role in human decision making. At the Knowledgeable Computing and Reasoning (KRaCR; pronounced as cracker) Lab affiliated with the CSE department at IIIT-Delhi, we investigate techniques to incorporate these features into the machine and improve its decision making. We work on all aspects of the Semantic Web and Knowledge Graphs, including ontology modelling, knowledge graphs, ontology reasoning, and their applications to different domains such as healthcare, air pollution, and robotics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Sections-->
+     <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="overflow-x-auto whitespace-nowrap" style="max-width: 100vw;">
+                <div class="card-deck d-flex flex-nowrap" style="gap: 1rem;">
+                    {{ range .Site.Data.projects.projects }}
+                    <div class="card border rounded-lg shadow-lg bg-white text-black" style="width: 20rem; height: 30rem; overflow-y: auto;">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .title }}</h5>
+                            <p class="card-text">{{ .description }}</p>
+                            <p class="card-text text-xs"><strong>Authors:</strong> {{ .authors }} | <strong>Category:</strong> {{ .category }}</p>
+                            <p class="card-text"><small class="text-muted">Last updated {{ .lastUpdated }}</small></p>
+                        </div>
+                        <div class="card-footer bg-gray-200 text-center">
+                            {{ if .githubUrl }}
+                                <a href="{{ .githubUrl }}" class="text-green-500 text-sm hover:underline" target="_blank">GitHub</a>
+                            {{ end }}
+                            {{ if .publicationUrl }}
+                                <a href="{{ .publicationUrl }}" class="text-blue-500 text-sm hover:underline ml-2" target="_blank">Publication</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- News Section -->
+    <section id="news" class="py-5">
+        <div class="container">
+            <h2 class="text-center">News</h2>
+            <ul>
+                <li>August 2023: Gunjan attended Neuro-Symbolic AI Summer School 2023.</li>
+                <li>January 2023: Gunjan attended Google Research Week 2023 in Bangalore.</li>
+                <li>December 2022: Gunjan received the student grant for attending ACML 2022.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{{ end }}
