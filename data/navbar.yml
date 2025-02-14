@@ -11,3 +11,5 @@ navItems:
     url: "#news"
   - name: "Contact"
     url: "#contact"
+  - name: "Join Us"
+    url: "#contact"

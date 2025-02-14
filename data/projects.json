@@ -37,6 +37,17 @@
           "year": {
               "$date": "2022-01-01T00:00:00Z"
           }
-      }
+      },
+      {
+        "title": "Ontologies for the Indian Legal System",
+        "description": "We are assessing the suitability of SALI (and other legal domain) ontologies for the Indian legal system and extending them wherever required. We will model a few use cases using these ontologies. The project also involves exploring ways to enhance LLMs with ontological knowledge to aid in their understanding of legal domain tasks.",
+        "authors": "Apurv Dube, Dr. Vikram Goyal, Dr. Raghava Mutharaju",
+        "category": "Ontology Modelling and Enrichment",
+        "githubUrl": "",
+        "publicationUrl": "",
+        "year": {
+            "$date": "2023-01-01T00:00:00Z"
+        }
+    }
   ]
 }
